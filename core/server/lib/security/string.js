@@ -12,7 +12,7 @@ module.exports.safe = function safe(string, options) {
     string = string.replace(/£/g, '-');
 
     // Remove non ascii characters
-    string = unidecode(string);
+    // string = unidecode(string);
 
     // Replace URL reserved chars: `@:/?#[]!$&()*+,;=` as well as `\%<>|^~£"{}` and \`
     string = string.replace(/(\s|\.|@|:|\/|\?|#|\[|\]|!|\$|&|\(|\)|\*|\+|,|;|=|\\|%|<|>|\||\^|~|"|\{|\}|`|–|—)/g, '-')

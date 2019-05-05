@@ -74,7 +74,7 @@ module.exports = function entryController(req, res, next) {
              * @TODO:
              * Simplify if we drop v0.1.
              */
-            if (urlService.utils.absoluteToRelative(entry.url, {withoutSubdirectory: true}) !== req.path) {
+            if (encodeURI(urlService.utils.absoluteToRelative(entry.url, {withoutSubdirectory: true})) !== req.path) {
                 debug('redirect');
 
                 return urlService.utils.redirect301(res, url.format({
